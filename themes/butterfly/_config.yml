@@ -345,7 +345,7 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: https://twikoo-api-flax-six.vercel.app
+  envId: 
   region:
   visitor: false
   option:

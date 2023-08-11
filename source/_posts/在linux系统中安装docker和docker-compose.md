@@ -1,5 +1,5 @@
 ---
-title: 在linux系统中安装docker和docker-compose
+title: 在ubuntu系统中安装docker和docker-compose
 date: 2023-3-29
 updated:
 tags: docker
@@ -37,7 +37,7 @@ aside:
 1. **更新、安装必备软件**
 
 ```bash
-apt-get update && apt-get install -y wget vim
+apt-get update && apt-get install -y wget vim curl
 ```
 
 2. **一键安装脚本**
@@ -61,13 +61,14 @@ wget -qO- get.docker.com | bash
 
 ```bash
 sudo su # 获取root权限
-curl -sSL https://get.daocloud.io/docker | sh
+bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/DockerInstallation.sh)
 ```
+在安装的过程中会让你选择镜像源的地址,阿里云/网易云/腾讯云都可以的.
 
 2. **卸载docker**
 
 ```bash
-sudo apt-get remove docker docker-engine
+sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo rm -rf /var/lib/docker/
 sudo rm -rf /var/lib/containerd
 ```
